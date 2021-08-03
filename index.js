@@ -48,8 +48,11 @@ app.post("/contact", (req, res) => {
     contactEmail.sendMail(mail, (error) => {
         if (error)
             res.json({ status: "ERROR" });
-        else
+        else {
+            console.log("Message Sent!!");
             res.json({ status: "Message Sent" });
+
+        }
     });
 });
 app.listen(5000, () => {
